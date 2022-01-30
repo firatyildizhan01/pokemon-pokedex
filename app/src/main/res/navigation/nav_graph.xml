@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pokeListFragment">
+
+    <fragment
+        android:id="@+id/pokeListFragment"
+        android:name="game.play.pokemon_pokedex.ui.PokeListFragment"
+        android:label="PokeListFragment">
+        <action
+            android:id="@+id/action_pokeListFragment_to_pokeInfoFragment"
+            app:destination="@id/pokeInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokeInfoFragment"
+        android:name="game.play.pokemon_pokedex.ui.PokeInfoFragment"
+        android:label="PokeInfoFragment" />
+</navigation>
