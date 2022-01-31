@@ -15,5 +15,10 @@
     <fragment
         android:id="@+id/pokeInfoFragment"
         android:name="game.play.pokemon_pokedex.ui.PokeInfoFragment"
-        android:label="PokeInfoFragment" />
+        android:label="PokeInfoFragment">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
 </navigation>

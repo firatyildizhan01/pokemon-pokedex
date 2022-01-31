@@ -17,7 +17,7 @@
         tools:text="Pokemon Name" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/pokemonImageVıew"
         android:layout_width="105dp"
         android:layout_height="79dp"
         android:layout_marginTop="128dp"
@@ -39,7 +39,7 @@
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonImageVıew"
         tools:text="Height: 1m" />
 
     <TextView
