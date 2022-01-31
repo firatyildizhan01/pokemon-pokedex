@@ -25,11 +25,13 @@ class PokeInfoFragment : Fragment(R.layout.fragment_poke_info) {
         binding = FragmentPokeInfoBinding.bind(view)
 
         viewModel = ViewModelProvider(this).get(PokeInfoViewModel::class.java)
+
+        initUI()
     }
 
     private fun initUI() {
 
-        val id = args.id
+        val id = args.it
 
         viewModel.getPokemonInfo(id)
 

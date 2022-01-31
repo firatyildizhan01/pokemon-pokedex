@@ -1,12 +1,8 @@
 package game.play.pokemon_pokedex.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +10,7 @@ import game.play.pokemon_pokedex.R
 import game.play.pokemon_pokedex.adapters.PokeListAdapter
 import game.play.pokemon_pokedex.databinding.FragmentPokeListBinding
 import game.play.pokemon_pokedex.viewmodels.PokeListViewModel
+
 
 class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
 
@@ -29,14 +26,14 @@ class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
 
         initUI()
 
-
     }
 
     private fun initUI() {
         binding.pokelistRecyclerView.layoutManager = LinearLayoutManager(context)
         binding.pokelistRecyclerView.adapter = PokeListAdapter {
-            val action = PokeListFragmentDirections.actionPokeListFragmentToPokeInfoFragment()
+            val action = PokeListFragmentDirections.actionPokeListFragmentToPokeInfoFragment(it)
             findNavController().navigate(action)
+
         }
 
         viewModel.getPokemonList()

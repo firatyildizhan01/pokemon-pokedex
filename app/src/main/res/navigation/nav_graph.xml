@@ -17,8 +17,11 @@
         android:name="game.play.pokemon_pokedex.ui.PokeInfoFragment"
         android:label="PokeInfoFragment">
         <argument
-            android:name="id"
+            android:name="it"
             android:defaultValue="0"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_pokeInfoFragment_to_pokeListFragment"
+            app:destination="@id/pokeListFragment" />
     </fragment>
 </navigation>

@@ -34,6 +34,8 @@ class PokeListAdapter(val pokemonClick: (Int) -> Unit) :
         val pokemon = pokemonList[position]
 
         holder.binding.pokemonText.text = pokemon.name
+
+        holder.binding.root.setOnClickListener { pokemonClick(position + 1) }
     }
 
 

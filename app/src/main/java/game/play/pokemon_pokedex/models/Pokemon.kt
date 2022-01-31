@@ -1,6 +1,5 @@
 package game.play.pokemon_pokedex.models
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class Pokemon(
@@ -13,5 +12,5 @@ data class Pokemon(
 
 data class Sprites(
     @SerializedName("front_default") val frontDefault: String?,
-    @SerializedName("front_default") val backDefault: String?
+    @SerializedName("back_default") val backDefault: String?
 )
