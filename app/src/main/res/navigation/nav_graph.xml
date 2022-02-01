@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/pokeListFragment">
+    app:startDestination="@id/overlayFragment">
 
     <fragment
         android:id="@+id/pokeListFragment"
@@ -22,6 +23,15 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_pokeInfoFragment_to_pokeListFragment"
+            app:destination="@id/pokeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overlayFragment"
+        android:name="game.play.pokemon_pokedex.ui.OverlayFragment"
+        android:label="fragment_overlay"
+        tools:layout="@layout/fragment_overlay">
+        <action
+            android:id="@+id/action_overlayFragment_to_pokeListFragment"
             app:destination="@id/pokeListFragment" />
     </fragment>
 </navigation>

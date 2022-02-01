@@ -36,9 +36,10 @@ class PokeInfoFragment : Fragment(R.layout.fragment_poke_info) {
         viewModel.getPokemonInfo(id)
 
         viewModel.pokemonInfo.observe(this, { pokemon ->
-            binding.nameTextView.text = pokemon.name
-            binding.heightText.text = "${pokemon.height}m"
-            binding.weightText.text = "${pokemon.weight}"
+            binding.nameTextView.text = "Pokemon Name : ${pokemon.name}"
+            binding.heightText.text = "Pokemon Height: ${pokemon.height}"
+            binding.weightText.text = "Pokemon Weight: l${pokemon.weight}"
+            binding.buttonFrontBack.text = "SHOW ${pokemon.name} IN OVERLAY"
 
             Glide.with(this).load(pokemon.sprites.frontDefault).into(binding.pokemonImageVEw)
         })
