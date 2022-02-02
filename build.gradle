@@ -9,10 +9,12 @@ buildscript {
         def nav_version = "2.4.0"
         classpath "com.android.tools.build:gradle:7.0.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
-
+        classpath 'com.google.gms:google-services:4.3.10'
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
     }
 }
+
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

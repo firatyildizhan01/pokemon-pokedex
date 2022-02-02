@@ -16,7 +16,7 @@ class PokeListViewModel() : ViewModel() {
     val pokemonList = MutableLiveData<List<PokeResult>>()
 
     fun getPokemonList() {
-        val call = service.getPokemonList(100, 0)
+        val call = service.getPokemonList(1000, 0)
 
         call.enqueue(object : retrofit2.Callback<PokeApiResponse> {
             override fun onResponse(

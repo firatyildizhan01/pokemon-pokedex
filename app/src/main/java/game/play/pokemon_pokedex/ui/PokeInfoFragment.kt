@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import game.play.pokemon_pokedex.R
@@ -27,6 +28,10 @@ class PokeInfoFragment : Fragment(R.layout.fragment_poke_info) {
         viewModel = ViewModelProvider(this).get(PokeInfoViewModel::class.java)
 
         initUI()
+
+        binding.buttonFrontBack.setOnClickListener {
+            findNavController().navigate(R.id.action_pokeInfoFragment_to_popupFragment)
+        }
     }
 
     private fun initUI() {

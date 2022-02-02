@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_pokeInfoFragment_to_pokeListFragment"
             app:destination="@id/pokeListFragment" />
+        <action
+            android:id="@+id/action_pokeInfoFragment_to_popupFragment"
+            app:destination="@id/popupFragment" />
     </fragment>
     <fragment
         android:id="@+id/overlayFragment"
@@ -34,4 +37,9 @@
             android:id="@+id/action_overlayFragment_to_pokeListFragment"
             app:destination="@id/pokeListFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/popupFragment"
+        android:name="game.play.pokemon_pokedex.ui.PopupFragment"
+        android:label="fragment_popup"
+        tools:layout="@layout/fragment_popup" />
 </navigation>

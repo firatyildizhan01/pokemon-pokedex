@@ -16,6 +16,9 @@ class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
 
     private lateinit var viewModel: PokeListViewModel
     private lateinit var binding: FragmentPokeListBinding
+    var page = 1
+    var isLoading = false
+    val limit = 10
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,5 +45,14 @@ class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
             (binding.pokelistRecyclerView.adapter as PokeListAdapter).setData(list)
         })
     }
+
+    fun getPage() {
+        viewModel.pokemonList.observe(this, { list ->
+
+        })
+
+    }
+
+
 }
 
