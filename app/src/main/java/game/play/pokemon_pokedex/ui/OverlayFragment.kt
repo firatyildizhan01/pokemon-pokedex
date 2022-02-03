@@ -24,7 +24,6 @@ class OverlayFragment : Fragment(R.layout.fragment_overlay) {
 
         hideSystemBars()
 
-
         binding = FragmentOverlayBinding.bind(view)
 
         if (Settings.canDrawOverlays(context)) {

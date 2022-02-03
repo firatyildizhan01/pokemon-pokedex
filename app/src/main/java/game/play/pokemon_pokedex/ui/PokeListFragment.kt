@@ -9,25 +9,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import game.play.pokemon_pokedex.R
 import game.play.pokemon_pokedex.adapters.PokeListAdapter
 import game.play.pokemon_pokedex.databinding.FragmentPokeListBinding
+import game.play.pokemon_pokedex.service.Window
 import game.play.pokemon_pokedex.viewmodels.PokeListViewModel
+import android.content.Intent
 
 
 class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
 
     private lateinit var viewModel: PokeListViewModel
     private lateinit var binding: FragmentPokeListBinding
-    var page = 1
-    var isLoading = false
-    val limit = 10
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         binding = FragmentPokeListBinding.bind(view)
 
         viewModel = ViewModelProvider(this).get(PokeListViewModel::class.java)
 
         initUI()
+
 
     }
 
@@ -46,12 +48,8 @@ class PokeListFragment : Fragment(R.layout.fragment_poke_list) {
         })
     }
 
-    fun getPage() {
-        viewModel.pokemonList.observe(this, { list ->
 
-        })
 
-    }
 
 
 }

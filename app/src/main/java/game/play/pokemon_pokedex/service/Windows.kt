@@ -8,11 +8,10 @@ import android.view.*
 import game.play.pokemon_pokedex.R
 import java.lang.Exception
 
-
 class Window(  // declaring required variables
     private val context: Context
 ) {
-    private val mView: View
+    val mView: View
     private var mParams: WindowManager.LayoutParams? = null
     private val mWindowManager: WindowManager
     private val layoutInflater: LayoutInflater
@@ -60,15 +59,15 @@ class Window(  // declaring required variables
                 PixelFormat.TRANSLUCENT
             )
         }
-
         // getting a LayoutInflater
         layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         // inflating the view with the custom layout we created
-        mView = layoutInflater.inflate(R.layout.popup_window, null)
+        mView = layoutInflater.inflate(R.layout.fragment_popup_window, null)
         // set onClickListener on the remove button, which removes
         // the view from the window
         mView.findViewById<View>(R.id.window_close).setOnClickListener { close() }
-        var k = mView.findViewById<View>(R.id.pokemonNameText)
+
+
         // Define the position of the
         // window within the screen
         mParams!!.gravity = Gravity.CENTER

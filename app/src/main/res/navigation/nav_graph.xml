@@ -41,5 +41,10 @@
         android:id="@+id/popupFragment"
         android:name="game.play.pokemon_pokedex.ui.PopupFragment"
         android:label="fragment_popup"
-        tools:layout="@layout/fragment_popup" />
+        tools:layout="@layout/fragment_popup">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
 </navigation>

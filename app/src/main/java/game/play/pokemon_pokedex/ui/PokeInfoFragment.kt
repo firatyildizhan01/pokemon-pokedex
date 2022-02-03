@@ -11,7 +11,6 @@ import game.play.pokemon_pokedex.R
 import game.play.pokemon_pokedex.databinding.FragmentPokeInfoBinding
 import game.play.pokemon_pokedex.viewmodels.PokeInfoViewModel
 
-
 class PokeInfoFragment : Fragment(R.layout.fragment_poke_info) {
 
     val args: PokeInfoFragmentArgs by navArgs()
@@ -21,16 +20,18 @@ class PokeInfoFragment : Fragment(R.layout.fragment_poke_info) {
     private lateinit var viewModel: PokeInfoViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
+        super.onViewCreated(view, savedInstanceState)
         binding = FragmentPokeInfoBinding.bind(view)
 
         viewModel = ViewModelProvider(this).get(PokeInfoViewModel::class.java)
+        val id = args.it
 
         initUI()
 
         binding.buttonFrontBack.setOnClickListener {
-            findNavController().navigate(R.id.action_pokeInfoFragment_to_popupFragment)
+            val action = PokeInfoFragmentDirections.actionPokeInfoFragmentToPopupFragment(id)
+            findNavController().navigate(action)
         }
     }
 
@@ -41,9 +42,10 @@ class PokeInfoFragment : Fragment(R.layout.fragment_poke_info) {
         viewModel.getPokemonInfo(id)
 
         viewModel.pokemonInfo.observe(this, { pokemon ->
+
             binding.nameTextView.text = "Pokemon Name : ${pokemon.name}"
             binding.heightText.text = "Pokemon Height: ${pokemon.height}"
-            binding.weightText.text = "Pokemon Weight: l${pokemon.weight}"
+            binding.weightText.text = "Pokemon Weight: ${pokemon.weight}"
             binding.buttonFrontBack.text = "SHOW ${pokemon.name} IN OVERLAY"
 
             Glide.with(this).load(pokemon.sprites.frontDefault).into(binding.pokemonImageVEw)

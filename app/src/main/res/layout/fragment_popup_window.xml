@@ -25,34 +25,34 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:id="@+id/imageFront"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="30dp"
+                    tools:srcCompat="@drawable/pokeball" />
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/imageBack"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_marginStart="20dp"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@drawable/pokeball" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/pokemonNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="150dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
                 android:layout_marginTop="20dp"
-                android:text="TextView" />
+                android:text="Pokemon" />
 
             <Button
                 android:id="@+id/window_close"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="CLOSE WINDOW" />
+                android:text="Close Window" />
 
         </LinearLayout>
 

@@ -17,4 +17,5 @@ interface PokeAPI {
         @Query("limit") limit: Int,
         @Query("offset") offset: Int
     ): Call<PokeApiResponse>
+
 }
